@@ -7,6 +7,11 @@ import os
 
 app = FastAPI()
 
+# Adicione esta rota:
+@app.get("/")
+def read_root():
+    return {"mensagem": "Minha API no Render está funcionando!"}
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
